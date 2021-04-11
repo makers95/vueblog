@@ -1,13 +1,16 @@
 package com.markerhub.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -28,10 +31,12 @@ public class User implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
+    @NotBlank(message = "訊息不為空")
     private String username;
 
     private String avatar;
-
+    @Email(message = "email格式不正確")
+    @NotBlank(message = "郵箱不為空")
     private String email;
 
     private String password;
