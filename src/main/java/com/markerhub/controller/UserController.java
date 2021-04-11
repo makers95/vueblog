@@ -1,6 +1,8 @@
 package com.markerhub.controller;
 
 
+import com.markerhub.common.lang.Result;
+import com.markerhub.entity.User;
 import com.markerhub.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +27,8 @@ public class UserController {
 
     @GetMapping("/index")
     public Object index(){
-        return  userService.getById(1L);
+        User user = userService.getById(1L);
+        return Result.succ(200,"操作成功",user);
     }
 
 }
