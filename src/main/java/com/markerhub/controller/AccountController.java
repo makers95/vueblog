@@ -26,7 +26,7 @@ import javax.validation.Valid;
  * @return $
  **/
 @RestController
-public class accountController {
+public class AccountController {
     @Autowired
     UserService userService;
 
@@ -42,7 +42,7 @@ public class accountController {
         }
         String jwt = jwtUtils.generateToken(user.getId());
         response.setHeader("Authorization",jwt);
-        response.setHeader("Access-control-Expost-Headers","Authorization");
+        response.setHeader("Access-control-Expose-Headers","Authorization");
 
         return Result.succ(MapUtil
                 .builder()
