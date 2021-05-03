@@ -12,14 +12,6 @@ import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-/**
- * <p>
- * 
- * </p>
- *
- * @author 关注公众号：MarkerHub
- * @since 2021-04-09
- */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)

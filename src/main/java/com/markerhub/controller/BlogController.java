@@ -21,9 +21,7 @@ import java.time.LocalDateTime;
  * <p>
  * 前端控制器
  * </p>
- *
- * @author 关注公众号：MarkerHub
- * @since 2021-04-09
+
  */
 @RestController
 public class BlogController {
@@ -39,7 +37,7 @@ public class BlogController {
         return Result.succ(pageData);
     }
 
-    @GetMapping("/blogs/{id}")
+    @GetMapping("/blog/{id}")
     public Result list(@PathVariable(name = "id") Long id) {
         Blog blog = blogService.getById(id);
         Assert.notNull(blog,"該blog已被刪除");
